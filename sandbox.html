@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LWD - Premier Wholesale Nursery Suppliers</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <img src="/static/images/lwd-logo.png" alt="LWD Logo" class="h-10">
+        <span class="text-xl font-bold text-green-700">LWD</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm font-semibold">
+        <a href="#" class="hover:text-green-700">Home</a>
+        <a href="#" class="hover:text-green-700">Services</a>
+        <a href="#" class="hover:text-green-700">Gallery</a>
+        <a href="#" class="hover:text-green-700">About</a>
+        <a href="#" class="hover:text-green-700">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-[url('/static/images/hero-bg.jpg')] bg-cover bg-center text-white py-24 px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Premier Wholesale Nursery Suppliers</h1>
+    <p class="text-lg md:text-xl max-w-xl mx-auto mb-6">Our focus is to provide the best quality landscape supply and service to our landscape contractors in every way possible.</p>
+    <div class="flex justify-center gap-4">
+      <a href="tel:2106989669" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded">Call Us</a>
+      <a href="mailto:sales@lwdtx.com" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded">Email Us</a>
+    </div>
+  </section>
+
+  <!-- TODO: Products and highlighted services -->
+  <section id="products" class="py-20 px-4 bg-gray-100">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-green-700 mb-10">Our Top Products</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Product Card: Live Oaks -->
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <!-- TODO: replace with correct image -->
+          <div class="aspect-w-4 aspect-h-3 w-full">
+            <img src="/static/images/texas_sage.jpg" alt="Live Oaks" loading="lazy" class="object-cover w-full h-full">
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-800">Live Oaks</h3>
+            <p class="text-sm text-gray-600 mt-1">Large shade trees ideal for urban landscapes.</p>
+          </div>
+        </div>
+
+        <!-- Product Card: Boxwoods -->
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <!-- TODO: replace with correct image -->
+          <div class="aspect-w-4 aspect-h-3 w-full">
+            <img src="/static/images/boxwoods.jpg" alt="Boxwoods" loading="lazy" class="object-cover w-full h-full">
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-800">Boxwoods</h3>
+            <p class="text-sm text-gray-600 mt-1">Perfect for structured and ornamental designs.</p>
+          </div>
+        </div>
+
+        <!-- Product Card: Flowering Shrubs -->
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <!-- TODO: replace with correct image -->
+          <div class="aspect-w-4 aspect-h-3 w-full">
+            <img src="/static/images/flowering-shrubs.jpg" alt="Flowering Shrubs" loading="lazy" class="object-cover w-full h-full">
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-800">Flowering Shrubs</h3>
+            <p class="text-sm text-gray-600 mt-1">Seasonal color and pollinator-friendly options.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-8 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="font-semibold text-lg mb-2">Boerne Location</h4>
+        <p>25840 IH – 10 W<br>Boerne TX 78006</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-lg mb-2">San Antonio Location</h4>
+        <p>19281 Marbach Lane<br>San Antonio TX 78266</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-lg mb-2">Contact</h4>
+        <p>Phone: 830-375-5501</p>
+        <p>Email: <a href="mailto:sales@lwdtx.com" class="underline">sales@lwdtx.com</a></p>
+      </div>
+    </div>
+    <p class="text-center text-sm mt-6">&copy; 2025 Landscape Wholesale Distributors. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

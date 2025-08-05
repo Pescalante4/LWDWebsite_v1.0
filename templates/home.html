@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LWD | Plant Wholesale Distributors</title>
+  <meta name="description" content="Premium landscape plants delivered across Texas and surrounding states. Reliable service, high-quality inventory, and expert support.">
+  <meta name="theme-color" content="#166534" />
+
+  <!-- Social Sharing (Open Graph + Twitter Cards) -->
+  <meta property="og:title" content="LWD | Plant Wholesale Distributors" />
+  <meta property="og:description" content="Premium landscape plants delivered with care. Serving Texas and beyond." />
+  <meta property="og:image" content="https://lwd.com/static/images/og-banner.jpg" />
+  <meta property="og:url" content="https://lwd.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#166534', // Custom green
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global Styles -->
+  <style>
+    html {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb; /* Same as bg-gray-50 */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img {
+      image-rendering: auto;
+    }
+
+    @keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out both;
+}
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+
+
+  @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- TODO: Header and navigation settings -->
+<header class="bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-md sticky top-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+  <!-- Logo and Branding -->
+  <a href="/" class="flex items-center space-x-4 group transition-all duration-200">
+    <img src="/static/images/logo.png" alt="LWD Logo" class="w-12 h-12 rounded-full shadow-md transition-transform duration-300 group-hover:scale-105" />
+    <div class="flex flex-col leading-tight">
+      <span class="text-xl sm:text-2xl font-bold text-green-700 group-hover:text-green-800 transition-colors">
+<!--TODO: place green text above name if wanted!!-->
+      </span>
+      <span class="text-sm sm:text-base text-gray-600 tracking-tight -mt-1">
+        Landscape Wholesale Distributors
+      </span>
+    </div>
+  </a>
+
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+      <a href="#about" class="hover:text-green-700 transition">About</a>
+      <a href="#products" class="hover:text-green-700 transition">Products</a>
+      <a href="#why-us" class="hover:text-green-700 transition">Why LWD</a>
+      <a href="#location" class="hover:text-green-700 transition">Location</a>
+      <a href="#contact" class="hover:text-green-700 transition">Contact</a>
+      <a href="#contact" class="ml-4 px-4 py-2 bg-green-700 text-white rounded-full hover:bg-green-800 transition font-semibold shadow-sm">Get a Quote</a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="mobile-menu-btn" class="text-green-700 focus:outline-none" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 bg-white/95 backdrop-blur-md border-t border-gray-200">
+    <a href="#about" class="block text-gray-700 hover:text-green-700 font-medium py-2">About</a>
+    <a href="#products" class="block text-gray-700 hover:text-green-700 font-medium py-2">Products</a>
+    <a href="#why-us" class="block text-gray-700 hover:text-green-700 font-medium py-2">Why LWD</a>
+    <a href="#location" class="block text-gray-700 hover:text-green-700 font-medium py-2">Location</a>
+    <a href="#contact" class="block text-gray-700 hover:text-green-700 font-medium py-2">Contact</a>
+    <a href="#contact" class="block bg-green-700 text-white text-center font-semibold rounded-full py-2 hover:bg-green-800 transition">Get a Quote</a>
+  </div>
+</header>
+
+
+<!-- TODO: Main intro and opening statement -->
+<!-- HERO BANNER -->
+<section class="relative h-[100vh] w-full bg-cover bg-center overflow-hidden" style="background-image: url('/static/images/Hero.png');">
+  <!-- Dark overlay with animation -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60 backdrop-blur-0 transition-all duration-700 ease-in-out"></div>
+
+  <!-- Optional decorative SVG -->
+  <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-green-700 to-transparent opacity-50 pointer-events-none z-10"></div>
+
+  <!-- Main Hero Content -->
+  <div class="relative z-20 flex flex-col items-center justify-center text-center text-white h-full px-6">
+  <h1 class="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg">
+    Landscape Materials.<br class="hidden md:block"> Delivered Right.
+  </h1>
+  <p class="mt-5 text-lg md:text-xl max-w-2xl drop-shadow-md">
+    At LWD, we combine decades of plant expertise with reliable logistics to ensure every load arrives on time, exactly as expected.
+  </p>
+  <div class="mt-8 flex flex-col sm:flex-row gap-4">
+    <a href="#contact" class="bg-green-700 hover:bg-green-800 px-6 py-3 rounded-full font-semibold text-white transition duration-300">
+      Request a Quote
+    </a>
+    <a href="#products" class="bg-white hover:bg-gray-100 px-6 py-3 rounded-full font-semibold text-green-700 transition duration-300">
+      View Products
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+<!-- TODO: About section -->
+<section id="about" class="relative py-28 px-6 bg-white overflow-hidden">
+  <!-- Decorative leaf accent (optional SVG/blur blob) -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-green-100 rounded-full blur-3xl opacity-30 -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
+
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-5xl font-extrabold text-green-700 mb-6 tracking-tight leading-tight">
+      Who We Are
+    </h2>
+    <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto fade-in animate-fade-in-up duration-1000">
+      <span class="font-semibold text-green-800">Landscape Wholesale Distributors (LWD)</span> is a family-owned supplier with decades of experience serving the Southwest. Our mission is simple: deliver premium plants on time, with unmatched consistency and care. We support landscapers, developers, and contractors with an inventory they can count on — and a team they can trust.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- TODO: Products and highlighted services -->
+<!-- TODO: Adjust the photo resolution and quality, may require new photos of higher quality -->
+<section id="products" class="py-24 px-4 bg-gray-100">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center text-green-700 mb-12 animate-fade-in-up">Our Top Products</h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+      <!-- PRODUCT CARD TEMPLATE -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-100">
+        <img src="/static/images/texas_sage.png" alt="Texas Sage" loading="lazy" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-lg font-bold text-gray-800">Texas Sage</h3>
+          <p class="text-sm text-gray-600 mt-2">A hardy native shrub with silver foliage and purple blooms—ideal for drought-tolerant landscapes.</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-200">
+        <img src="/static/images/agave_potatorum.png" alt="Agave" loading="lazy" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-lg font-bold text-gray-800">Agave</h3>
+          <p class="text-sm text-gray-600 mt-2">A striking low-maintenance succulent perfect for modern or arid landscapes.</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-300">
+        <img src="/static/images/limestone_chunk_rocks.png" alt="Limestone Rock" loading="lazy" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-lg font-bold text-gray-800">Limestone Rock</h3>
+          <p class="text-sm text-gray-600 mt-2">White decorative rock used in xeriscapes and modern hardscapes.</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-400">
+        <img src="/static/images/salvia_mystic_spires.png" alt="Salvia Mystic Spires" loading="lazy" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-lg font-bold text-gray-800">Salvia Mystic Spires</h3>
+          <p class="text-sm text-gray-600 mt-2">An elegant blooming perennial perfect for pollinator gardens and vibrant borders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TODO: Mission statement -->
+<section id="why-us" class="relative py-28 px-6 bg-white overflow-hidden">
+  <!-- Decorative accent -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-green-100 rounded-full blur-3xl opacity-20 -z-10 -translate-x-1/2 -translate-y-1/2"></div>
+
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-5xl font-extrabold text-green-700 mb-6 tracking-tight animate-fade-in-up">Why LWD?</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12 animate-fade-in-up delay-100">
+      We’re not just a supplier—we’re your logistics partner, quality gatekeeper, and support system from the first order to the final install.
+    </p>
+
+    <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 text-left">
+
+      <!-- On-Time Logistics -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-200">
+        <div class="text-green-700 mb-4">
+          <!-- Truck Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13h13l3 5H3v-5zM5 18a1 1 0 100 2 1 1 0 000-2zm12 0a1 1 0 100 2 1 1 0 000-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">On-Time Logistics</h3>
+        <p class="text-sm text-gray-600">Reliable delivery across Texas and surrounding states—your crew never waits on us.</p>
+      </div>
+
+      <!-- Inspected Quality -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-300">
+        <div class="text-green-700 mb-4">
+          <!-- Badge Check Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.5 6.5h6L15 13l2.5 6.5L12 16l-5.5 3.5L9 13 3.5 9.5h6L12 3z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Inspected Quality</h3>
+        <p class="text-sm text-gray-600">We personally inspect every plant for health, maturity, and readiness before it leaves our hands.</p>
+      </div>
+
+      <!-- Responsive Support -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-400">
+        <div class="text-green-700 mb-4">
+          <!-- Headset Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 15v-3a9 9 0 1118 0v3a3 3 0 01-3 3h-1v-6h1a1 1 0 011 1v2a1 1 0 01-1 1h-2v4h-6v-4H9a1 1 0 01-1-1v-2a1 1 0 011-1h1v6H6a3 3 0 01-3-3z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Responsive Support</h3>
+        <p class="text-sm text-gray-600">Dedicated reps who actually answer the phone—and know your order by heart.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- TODO: Verify location is geolocked -->
+<section id="location" class="py-24 px-4 bg-gray-100">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold text-green-700">Visit Us</h2>
+    <p class="text-lg text-gray-600 mt-2 mb-6">Explore our facilities and see the plants before you buy.</p>
+    <div class="rounded-xl overflow-hidden border-4 border-green-700 shadow-xl">
+      <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=..." style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- TODO: ensure hours are set correctly -->
+<section id="hours" class="relative py-28 px-6 bg-white overflow-hidden">
+  <!-- Decorative accent -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-green-100 rounded-full blur-3xl opacity-20 -z-10 translate-x-1/2 -translate-y-1/2"></div>
+
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-5xl font-extrabold text-green-700 mb-6 tracking-tight animate-fade-in-up">Business Hours</h2>
+    <p class="text-lg text-gray-600 mb-10 animate-fade-in-up delay-100">
+      We're open during the hours you need us most. Reach out or visit during our standard operating times.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm font-medium animate-fade-in-up delay-200">
+      <!-- Day -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl py-5 shadow-sm hover:shadow-md transition">
+        <div class="flex flex-col items-center">
+          <svg class="w-6 h-6 text-green-700 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3M16 7V3M4 11h16M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span class="text-base text-gray-800">Sunday-Saturday</span>
+          <span class="text-gray-500">Closed</span>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-xl py-5 shadow-sm hover:shadow-md transition">
+        <div class="flex flex-col items-center">
+          <svg class="w-6 h-6 text-green-700 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3M16 7V3M4 11h16M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span class="text-base text-gray-800">Mon – Fri</span>
+          <span class="text-gray-500">8 AM – 5 PM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--TODO: events calendar-->
+<section id="events" class="py-28 px-6 bg-gray-50 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold text-green-700 mb-6 animate-fade-in-up">Upcoming Events</h2>
+    <p class="text-lg text-gray-600 mb-12 animate-fade-in-up delay-100">
+      Mark your calendar — join us for seasonal sales, industry meetups, and more.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+
+      <!-- Event Card -->
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-green-700 hover:shadow-md transition animate-fade-in-up delay-200">
+        <h3 class="text-lg font-bold text-gray-800 mb-1">Fall Shrub Sale</h3>
+        <p class="text-sm text-gray-500 mb-2">📅 October 14–19, 2025</p>
+        <p class="text-sm text-gray-600">Save up to 30% on native shrubs — including Texas Sage, Yaupon, and more.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-green-700 hover:shadow-md transition animate-fade-in-up delay-300">
+        <h3 class="text-lg font-bold text-gray-800 mb-1">Contractor Appreciation Week</h3>
+        <p class="text-sm text-gray-500 mb-2">📅 November 4–8, 2025</p>
+        <p class="text-sm text-gray-600">Exclusive deals + catered lunch for verified landscaping teams.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-green-700 hover:shadow-md transition animate-fade-in-up delay-400">
+        <h3 class="text-lg font-bold text-gray-800 mb-1">Holiday Hours</h3>
+        <p class="text-sm text-gray-500 mb-2">📅 Closed November 28–29</p>
+        <p class="text-sm text-gray-600">We’ll be closed for Thanksgiving. Stock up early!</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TODO: ensure proper contact information is displayed -->
+<section id="contact" class="py-28 px-6 bg-white text-center relative overflow-hidden">
+  <!-- Decorative Accent -->
+  <div class="absolute bottom-0 left-0 w-72 h-72 bg-green-100 rounded-full blur-3xl opacity-20 -z-10 translate-y-1/2 -translate-x-1/2"></div>
+
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-5xl font-extrabold text-green-700 mb-4 animate-fade-in-up">Get In Touch</h2>
+    <p class="text-lg text-gray-600 mb-10 animate-fade-in-up delay-100">
+      Need pricing, quotes, or help selecting the right plants? Our team is ready.
+    </p>
+
+    <!-- Main Contact Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-14 animate-fade-in-up delay-200">
+      <a href="mailto:sales@lwd.com" class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full font-semibold transition">
+        Email Sales
+      </a>
+      <a href="tel:+12105551234" class="text-green-700 hover:underline font-medium">
+        (210) 555-1234
+      </a>
+    </div>
+
+    <!-- Sales Reps -->
+    <div class="grid gap-10 sm:grid-cols-2 max-w-4xl mx-auto text-left animate-fade-in-up delay-300">
+
+      <!-- Quinton -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md p-6 transition">
+        <div class="flex items-center space-x-4">
+          <img src="/static/images/quinton.jpg" alt="Quinton" class="w-16 h-16 rounded-full object-cover shadow">
+          <div>
+            <h3 class="text-lg font-bold text-gray-800">Quinton</h3>
+            <p class="text-sm text-gray-600">Senior Sales Rep</p>
+            <a href="mailto:quinton@lwdtx.com" class="text-sm text-green-700 hover:underline mt-1 inline-block">quinton@lwdtx.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tyler -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md p-6 transition">
+        <div class="flex items-center space-x-4">
+          <img src="/static/images/tyler.jpg" alt="Tyler" class="w-16 h-16 rounded-full object-cover shadow">
+          <div>
+            <h3 class="text-lg font-bold text-gray-800">Tyler</h3>
+            <p class="text-sm text-gray-600">Sales Consultant</p>
+            <a href="mailto:tyler@lwdtx.com" class="text-sm text-green-700 hover:underline mt-1 inline-block">tyler@lwdtx.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-green-800 text-white text-center py-6">
+  <p class="text-sm">&copy; 2025 LWD Distributors. All rights reserved.</p>
+</footer>
+
+<!-- Mobile menu toggle -->
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>
+
+</body>
+</html>
