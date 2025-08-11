@@ -10,12 +10,14 @@
   <!-- Social Sharing (Open Graph + Twitter Cards) -->
   <meta property="og:title" content="LWD | Landscape Wholesale Distributors" />
   <meta property="og:description" content="Premium landscape plants delivered with care. Serving Texas and beyond." />
-  <meta property="og:image" content="https://lwd.com/static/images/og-banner.jpg" />
-  <meta property="og:url" content="https://lwd.com" />
+  <meta property="og:image" content="static/images/og-banner.jpg" />
+  <meta property="og:url" content="https://<username>.github.io/<repo>/" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="static/images/favicon.ico" type="image/x-icon" />
+  <!-- Preload hero to avoid flicker -->
+  <link rel="preload" as="image" href="static/images/Hero.png" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,9 +26,7 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              DEFAULT: '#166534', // Custom green
-            }
+            brand: { DEFAULT: '#166534' } // Custom green
           }
         }
       }
@@ -46,64 +46,18 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    img {
-      image-rendering: auto;
+    img { image-rendering: auto; }
+
+    /* Single, de-duplicated animation block */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out both;
-}
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out both;
-  }
-
-  .delay-100 { animation-delay: 0.1s; }
-  .delay-200 { animation-delay: 0.2s; }
-  .delay-300 { animation-delay: 0.3s; }
-  .delay-400 { animation-delay: 0.4s; }
-
-
-  @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out both;
-}
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-
-
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out both; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
   </style>
 </head>
 
@@ -113,19 +67,18 @@
 <header class="bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-md sticky top-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-  <!-- Logo and Branding -->
-  <a href="/" class="flex items-center space-x-4 group transition-all duration-200">
-    <img src="/static/images/logo.png" alt="LWD Logo" class="w-12 h-12 rounded-full shadow-md transition-transform duration-300 group-hover:scale-105" />
-    <div class="flex flex-col leading-tight">
-      <span class="text-xl sm:text-2xl font-bold text-green-700 group-hover:text-green-800 transition-colors">
-<!--TODO: place green text above name if wanted!!-->
-      </span>
-      <span class="text-xl sm:text-base text-gray-600 tracking-tight -mt-1">
-        Landscape Wholesale Distributors
-      </span>
-    </div>
-  </a>
-
+    <!-- Logo and Branding -->
+    <a href="/" class="flex items-center space-x-4 group transition-all duration-200">
+      <img src="static/images/logo.png" alt="LWD Logo" class="w-12 h-12 rounded-full shadow-md transition-transform duration-300 group-hover:scale-105" />
+      <div class="flex flex-col leading-tight">
+        <span class="text-xl sm:text-2xl font-bold text-green-700 group-hover:text-green-800 transition-colors">
+          <!--TODO: place green text above name if wanted!!-->
+        </span>
+        <span class="text-xl sm:text-base text-gray-600 tracking-tight -mt-1">
+          Landscape Wholesale Distributors
+        </span>
+      </div>
+    </a>
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
@@ -158,10 +111,9 @@
   </div>
 </header>
 
-
 <!-- TODO: Main intro and opening statement -->
 <!-- HERO BANNER -->
-<section class="relative h-[100vh] w-full bg-cover bg-center overflow-hidden" style="background-image: url('/static/images/Hero.png');">
+<section class="relative h-[100vh] w-full bg-cover bg-center overflow-hidden" style="background-image: url('static/images/Hero.png');">
   <!-- Dark overlay with animation -->
   <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60 backdrop-blur-0 transition-all duration-700 ease-in-out"></div>
 
@@ -170,25 +122,22 @@
 
   <!-- Main Hero Content -->
   <div class="relative z-20 flex flex-col items-center justify-center text-center text-white h-full px-6">
-  <h1 class="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg">
-    Landscape Materials.<br class="hidden md:block"> Delivered Right.
-  </h1>
-  <p class="mt-5 text-lg md:text-xl max-w-2xl drop-shadow-md">
-    At LWD, we combine decades of plant expertise with reliable logistics to ensure every load arrives on time, exactly as expected.
-  </p>
-  <div class="mt-8 flex flex-col sm:flex-row gap-4">
-    <a href="#contact" class="bg-green-700 hover:bg-green-800 px-6 py-3 rounded-full font-semibold text-white transition duration-300">
-      Request a Quote
-    </a>
-    <a href="#products" class="bg-white hover:bg-gray-100 px-6 py-3 rounded-full font-semibold text-green-700 transition duration-300">
-      View Products
-    </a>
-  </div>
-</div>
-
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg">
+      Landscape Materials.<br class="hidden md:block"> Delivered Right.
+    </h1>
+    <p class="mt-5 text-lg md:text-xl max-w-2xl drop-shadow-md">
+      At LWD, we combine decades of plant expertise with reliable logistics to ensure every load arrives on time, exactly as expected.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+      <a href="#contact" class="bg-green-700 hover:bg-green-800 px-6 py-3 rounded-full font-semibold text-white transition duration-300">
+        Request a Quote
+      </a>
+      <a href="#products" class="bg-white hover:bg-gray-100 px-6 py-3 rounded-full font-semibold text-green-700 transition duration-300">
+        View Products
+      </a>
+    </div>
   </div>
 </section>
-
 
 <!-- TODO: About section -->
 <section id="about" class="relative py-28 px-6 bg-white overflow-hidden">
@@ -205,8 +154,6 @@
   </div>
 </section>
 
-
-
 <!-- TODO: Products and highlighted services -->
 <!-- TODO: Adjust the photo resolution and quality, may require new photos of higher quality -->
 <section id="products" class="py-24 px-4 bg-gray-100">
@@ -216,7 +163,7 @@
     <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
       <!-- PRODUCT CARD TEMPLATE -->
       <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-100">
-        <img src="/static/images/texas_sage.png" alt="Texas Sage" loading="lazy" class="w-full h-48 object-cover">
+        <img src="static/images/texas_sage.png" alt="Texas Sage" loading="lazy" class="w-full h-48 object-cover">
         <div class="p-5">
           <h3 class="text-lg font-bold text-gray-800">Texas Sage</h3>
           <p class="text-sm text-gray-600 mt-2">A hardy native shrub with silver foliage and purple blooms—ideal for drought-tolerant landscapes.</p>
@@ -224,7 +171,7 @@
       </div>
 
       <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-200">
-        <img src="/static/images/agave_potatorum.png" alt="Agave" loading="lazy" class="w-full h-48 object-cover">
+        <img src="static/images/agave_potatorum.png" alt="Agave" loading="lazy" class="w-full h-48 object-cover">
         <div class="p-5">
           <h3 class="text-lg font-bold text-gray-800">Agave</h3>
           <p class="text-sm text-gray-600 mt-2">A striking low-maintenance succulent perfect for modern or arid landscapes.</p>
@@ -232,7 +179,7 @@
       </div>
 
       <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-300">
-        <img src="/static/images/limestone_chunk_rocks.png" alt="Limestone Rock" loading="lazy" class="w-full h-48 object-cover">
+        <img src="static/images/limestone_chunk_rocks.png" alt="Limestone Rock" loading="lazy" class="w-full h-48 object-cover">
         <div class="p-5">
           <h3 class="text-lg font-bold text-gray-800">Limestone Rock</h3>
           <p class="text-sm text-gray-600 mt-2">White decorative rock used in xeriscapes and modern hardscapes.</p>
@@ -240,7 +187,7 @@
       </div>
 
       <div class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-[1.03] hover:shadow-xl transition-all duration-300 ease-in-out animate-fade-in-up delay-400">
-        <img src="/static/images/salvia_mystic_spires.png" alt="Salvia Mystic Spires" loading="lazy" class="w-full h-48 object-cover">
+        <img src="static/images/salvia_mystic_spires.png" alt="Salvia Mystic Spires" loading="lazy" class="w-full h-48 object-cover">
         <div class="p-5">
           <h3 class="text-lg font-bold text-gray-800">Salvia Mystic Spires</h3>
           <p class="text-sm text-gray-600 mt-2">An elegant blooming perennial perfect for pollinator gardens and vibrant borders.</p>
@@ -249,7 +196,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- TODO: Mission statement -->
 <section id="why-us" class="relative py-28 px-6 bg-white overflow-hidden">
@@ -304,9 +250,6 @@
   </div>
 </section>
 
-
-
-
 <!-- TODO: Verify location is geolocked -->
 <section id="location" class="py-24 px-4 bg-gray-100">
   <div class="max-w-4xl mx-auto text-center">
@@ -317,7 +260,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- TODO: ensure hours are set correctly -->
 <section id="hours" class="relative py-28 px-6 bg-white overflow-hidden">
@@ -388,8 +330,6 @@
   </div>
 </section>
 
-
-
 <!-- TODO: ensure proper contact information is displayed -->
 <section id="contact" class="py-28 px-6 bg-white text-center relative overflow-hidden">
   <!-- Decorative Accent -->
@@ -417,7 +357,7 @@
       <!-- Quinton -->
       <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md p-6 transition">
         <div class="flex items-center space-x-4">
-          <img src="/static/images/quinton.jpg" alt="Quinton" class="w-16 h-16 rounded-full object-cover shadow">
+          <img src="static/images/quinton.jpg" alt="Quinton" class="w-16 h-16 rounded-full object-cover shadow">
           <div>
             <h3 class="text-lg font-bold text-gray-800">Quinton</h3>
             <p class="text-sm text-gray-600">Senior Sales Rep</p>
@@ -430,7 +370,7 @@
       <!-- Tyler -->
       <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md p-6 transition">
         <div class="flex items-center space-x-4">
-          <img src="/static/images/tyler.jpg" alt="Tyler" class="w-16 h-16 rounded-full object-cover shadow">
+          <img src="static/images/tyler.jpg" alt="Tyler" class="w-16 h-16 rounded-full object-cover shadow">
           <div>
             <h3 class="text-lg font-bold text-gray-800">Tyler</h3>
             <p class="text-sm text-gray-600">Sales Consultant</p>
@@ -444,8 +384,6 @@
   </div>
 </section>
 
-
-
 <!-- Footer -->
 <footer class="bg-green-800 text-white text-center py-6">
   <p class="text-sm">&copy; 2025 Landscape Wholesale Distributors. All rights reserved.</p>
@@ -455,7 +393,7 @@
 <script>
   const menuBtn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-  menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  menuBtn?.addEventListener('click', () => menu.classList.toggle('hidden'));
 </script>
 
 </body>
